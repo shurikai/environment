@@ -5,38 +5,65 @@ local M = {
 }
 M.config = function()
     require("gitsigns").setup({
+        on_attach = function(bufnr)
+            local gitsigns = require("gitsigns")
+
+            local function map(mode, l, r, opts)
+                opts = opts or {}
+                opts.buffer = bufnr
+                vim.keymap.set(mode, l, r, opts)
+            end
+
+            -- Navigation
+            map("n", "]c", function()
+                if vim.wo.diff then
+                    vim.cmd.normal({ "]c", bang = true })
+                else
+                    gitsigns.nav_hunk("next")
+                end
+            end, { desc = "Gitsigns Navigate Next" })
+
+            map("n", "[c", function()
+                if vim.wo.diff then
+                    vim.cmd.normal({ "[c", bang = true })
+                else
+                    gitsigns.nav_hunk("prev")
+                end
+            end, { desc = "Gitsigns Navigate Previous" })
+
+            -- Actions
+            map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Gitsigns Stage Hunk" })
+            map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Gitsigns Reset Hunk" })
+            map("v", "<leader>hs", function()
+                gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+            end)
+            map("v", "<leader>hr", function()
+                gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+            end)
+            map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Gitsigns Stage Buffer" })
+            map("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Gitsigns Undo Stage Hunk" })
+            map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Gitsigns Reset Buffer" })
+            map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Gitsigns Preview Hunk" })
+            map("n", "<leader>hb", function()
+                gitsigns.blame_line({ full = true })
+            end, { desc = "Gitsigns Blame Line" })
+            map("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "Gitsigns Toggle Current Line Blame" })
+            map("n", "<leader>hd", gitsigns.diffthis, { desc = "Gitsigns Diff This" })
+            map("n", "<leader>hD", function()
+                gitsigns.diffthis("~")
+            end, { desc = "Gitsigns Diff This With ~" })
+            map("n", "<leader>td", gitsigns.toggle_deleted, { desc = "Gitsigns Toggle Deleted" })
+
+            -- Text object
+            map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Gitsigns Select Hunk" })
+        end,
         signs = {
-            add = {
-                hl = "GitSignsAdd",
-                numhl = "GitSignsAddNr",
-                linehl = "GitSignsAddLn",
-            },
-            change = {
-                hl = "GitSignsChange",
-                -- text = icons.ui.BoldLineDashedMiddle,
-                numhl = "GitSignsChangeNr",
-                linehl = "GitSignsChangeLn",
-            },
-            delete = {
-                hl = "GitSignsDelete",
-                text = "",
-                numhl = "GitSignsDeleteNr",
-                linehl = "GitSignsDeleteLn",
-            },
-            topdelete = {
-                hl = "GitSignsDelete",
-                text = "",
-                -- f text = icons.ui.TriangleShortArrowRight,
-                numhl = "GitSignsDeleteNr",
-                linehl = "GitSignsDeleteLn",
-            },
-            changedelete = {
-                hl = "GitSignsChange",
-                text = "",
-                -- text = icons.ui.BoldLineMiddle,
-                numhl = "GitSignsChangeNr",
-                linehl = "GitSignsChangeLn",
-            },
+            add = { text = "┃" },
+            change = { text = "┃" },
+            delete = { text = "_" },
+            topdelete = { text = "‾" },
+            changedelete = { text = "~" },
+            untracked = { text = "┆" },
         },
         watch_gitdir = {
             interval = 1000,

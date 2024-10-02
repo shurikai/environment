@@ -9,34 +9,34 @@ config = {
 	window_decorations = "RESIZE",
 	default_cursor_style = "BlinkingBar",
 	--color_scheme = 'tokyonight',
-	-- color_scheme = "Kanagawa (Gogh)",
+	-- color_scheme = "Grayscale (dark) (terminal.sexy)",
 	color_scheme = "kanagawabones",
 	-- color_scheme = "nord",
 	-- font = wezterm.font("M+CodeLat50 Nerd Font", { weight = "Regular" }),
-	font = wezterm.font("IosevkaTermSlab Nerd Font", { weight = "Light" }),
+	font = wezterm.font("IosevkaTermSlab Nerd Font", { weight = "Regular" }),
 	-- font = wezterm.font("IosevkaTerm Nerd Font", { weight = "Light" }),
-	font_size = 16,
+	font_size = 18,
 
 	background = {
-		{
-			source = {
-				File = "/Users/x318323/.config/wezterm/background.jpg",
-			},
-			hsb = {
-				hue = 1.0,
-				saturation = 1.0,
-				brightness = 0.3,
-			},
-			width = "100%",
-			height = "100%",
-		},
+		-- {
+		-- 	source = {
+		-- 		File = "/Users/x318323/.config/wezterm/background.jpg",
+		-- 	},
+		-- 	hsb = {
+		-- 		hue = 1.0,
+		-- 		saturation = 1.0,
+		-- 		brightness = 0.3,
+		-- 	},
+		-- 	width = "100%",
+		-- 	height = "100%",
+		-- },
 		{
 			source = {
 				Color = "#282c35",
 			},
 			width = "100%",
 			height = "100%",
-			opacity = 0.70,
+			-- opacity = 0.90,
 		},
 	},
 	window_padding = {

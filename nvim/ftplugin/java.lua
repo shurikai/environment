@@ -1,12 +1,18 @@
---local config = {
---cmd = { "/opt/homebrew/bin/jdtls" },
---root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
---}
---require("jdtls").start_or_attach(config)
+-- local config = {
+--     cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls") },
+--     root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
+-- }
+-- require("jdtls").start_or_attach(config)
 local home = os.getenv("HOME")
 local workspace_path = home .. "/.local/share/nvim/jdtls-workspace/"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = workspace_path .. project_name
+
+local bundles = {
+    vim.fn.glob(
+        vim.env.HOME .. "/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"
+    ),
+}
 
 local status, jdtls = pcall(require, "jdtls")
 if not status then
@@ -20,15 +26,15 @@ local config = {
         "-Declipse.application=org.eclipse.jdt.ls.core.id1",
         "-Dosgi.bundles.defaultStartLevel=4",
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
-        "-Dlog.protocol=true",
-        "-Dlog.level=ALL",
+        -- "-Dlog.protocol=true",
+        "-Dlog.level=ERROR",
         "-Xmx1g",
         "--add-modules=ALL-SYSTEM",
         "--add-opens",
         "java.base/java.util=ALL-UNNAMED",
         "--add-opens",
         "java.base/java.lang=ALL-UNNAMED",
-        "-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+        "-javaagent:" .. home .. "/.local/share/nvim/mason/share/jdtls/lombok.jar",
         "-jar",
         vim.fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
         "-configuration",
@@ -40,6 +46,7 @@ local config = {
 
     settings = {
         java = {
+            home = "/Users/x318323/.sdkman/candidates/java/17.0.11-amzn/",
             signatureHelp = { enabled = true },
             extendedClientCapabilities = extendedClientCapabilities,
             maven = {
@@ -64,6 +71,11 @@ local config = {
                 },
             },
         },
+        -- project = {
+        --     referencedLibraries = {
+        --         home .. "/.local/share/nvim/mason/share/jdtls/lombok.jar",
+        --     },
+        -- },
         configuration = {
             runtimes = {
                 {
@@ -83,29 +95,21 @@ local config = {
     },
 
     init_options = {
-        bundles = {},
+        bundles = bundles,
+    },
+    handlers = {
+        ["language/status"] = function()
+            -- Print or whatever.
+        end,
+        ["$/progress"] = function()
+            -- disable progress updates.
+        end,
     },
 }
-require("jdtls").start_or_attach(config)
 
-vim.keymap.set("n", "<leader>co", "<Cmd>lua require'jdtls'.organize_imports()<CR>", { desc = "Organize Imports" })
-vim.keymap.set("n", "<leader>crv", "<Cmd>lua require('jdtls').extract_variable()<CR>", { desc = "Extract Variable" })
-vim.keymap.set(
-    "v",
-    "<leader>crv",
-    "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>",
-    { desc = "Extract Variable" }
-)
-vim.keymap.set("n", "<leader>crc", "<Cmd>lua require('jdtls').extract_constant()<CR>", { desc = "Extract Constant" })
-vim.keymap.set(
-    "v",
-    "<leader>crc",
-    "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>",
-    { desc = "Extract Constant" }
-)
-vim.keymap.set(
-    "v",
-    "<leader>crm",
-    "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>",
-    { desc = "Extract Method" }
-)
+config["on_attach"] = function(client, bufnr)
+    jdtls.setup_dap({ hotcodereplace = "auto" })
+    require("jdtls.dap").setup_dap_main_class_configs()
+end
+
+require("jdtls").start_or_attach(config)

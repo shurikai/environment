@@ -4,6 +4,7 @@ local M = {
 }
 
 function M.config()
+    vim.keymap.set("n", "<Leader>ng", ":Neogit<CR>", { desc = "[N]eo[g]it" })
     require("neogit").setup({
         auto_refresh = true,
         disable_builtin_notifications = false,

@@ -2,6 +2,7 @@ local M = {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
+        "onsails/lspkind.nvim",
         {
             "hrsh7th/cmp-nvim-lsp",
             event = "InsertEnter",
@@ -52,6 +53,8 @@ function M.config()
         local col = vim.fn.col(".") - 1
         return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
     end
+
+    local lspkind = require("lspkind")
 
     cmp.setup({
         snippet = {
@@ -118,15 +121,15 @@ function M.config()
             -- }),
         }),
         sources = {
-            { name = "copilot" },
+            -- { name = "copilot" },
             { name = "nvim_lsp" },
             { name = "luasnip" },
-            { name = "cmp_tabnine" },
+            -- { name = "cmp_tabnine" },
             { name = "nvim_lua" },
             { name = "buffer" },
             { name = "path" },
-            { name = "calc" },
-            { name = "emoji" },
+            -- { name = "calc" },
+            -- { name = "emoji" },
         },
         confirm_opts = {
             behavior = cmp.ConfirmBehavior.Replace,
@@ -143,6 +146,18 @@ function M.config()
         },
         experimental = {
             ghost_text = false,
+        },
+        formatting = {
+            format = lspkind.cmp_format({
+                mode = "symbol_text",
+                menu = {
+                    buffer = "[Buffer]",
+                    nvim_lsp = "[LSP]",
+                    nvim_lua = "[Lua]",
+                    path = "[Path]",
+                    luasnip = "[LuaSnip]",
+                },
+            }),
         },
     })
 end
