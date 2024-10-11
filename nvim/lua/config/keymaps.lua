@@ -42,7 +42,7 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- [[ NvimTree ]] --
-keymap("n", "<leader>e", ":NeoTreeToggle<CR>", opts)
+keymap("n", "<leader>e", "<CMD>Neotree toggle<CR>", opts)
 
 -- [[ LSP Navigation - Diagnostics ]] --
 vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { desc = "Go to next diagnostic line." })

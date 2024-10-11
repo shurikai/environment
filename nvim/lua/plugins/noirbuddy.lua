@@ -1,16 +1,13 @@
-local M = {
+return {
     "jesseleite/nvim-noirbuddy",
     dependencies = {
         { "tjdevries/colorbuddy.nvim" },
     },
     lazy = false,
     priority = 1000,
-    opts = {},
-}
-
-M.config = function()
-    require("noirbuddy").setup({
+    opts = {
         preset = "slate",
+        -- preset = "northern-lights",
         colors = {
             primary = "#957FB8",
             secondary = "#D27E99",
@@ -22,7 +19,7 @@ M.config = function()
             diff_add = "#98BB6C",
             diff_change = "#FF9E38",
             diff_delete = "#E82424",
-            -- gray scale
+            -- -- gray scale
             -- noir_0 = "#a6a69c", -- `noir_0` is light for dark themes, and dark for light themes
             -- noir_1 = "#f5f5f5",
             -- noir_2 = "#54546D",
@@ -34,7 +31,11 @@ M.config = function()
             -- noir_8 = "#16161D",
             -- noir_9 = "#0d0c0c", -- `noir_9` is dark for dark themes, and light for light themes
         },
-    })
-end
-
-return M
+        styles = {
+            italic = false,
+            bold = true,
+            underline = true,
+            undercurl = true,
+        },
+    },
+}

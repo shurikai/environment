@@ -10,7 +10,9 @@ config = {
 	default_cursor_style = "BlinkingBar",
 	--color_scheme = 'tokyonight',
 	-- color_scheme = "Grayscale (dark) (terminal.sexy)",
-	color_scheme = "kanagawabones",
+	-- color_scheme = "kanagawabones",
+	-- color_scheme = "Sequoia Monochrome",
+	color_scheme = "Mono Theme (terminal.sexy)",
 	-- color_scheme = "nord",
 	-- font = wezterm.font("M+CodeLat50 Nerd Font", { weight = "Regular" }),
 	font = wezterm.font("IosevkaTermSlab Nerd Font", { weight = "Regular" }),
@@ -32,7 +34,7 @@ config = {
 		-- },
 		{
 			source = {
-				Color = "#282c35",
+				Color = "#12120F",
 			},
 			width = "100%",
 			height = "100%",

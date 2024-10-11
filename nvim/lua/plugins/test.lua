@@ -1,4 +1,4 @@
-local M = {
+return {
     "vim-test/vim-test",
     dependencies = {
         "preservim/vimux",
@@ -22,5 +22,3 @@ local M = {
 --         depth_limit_indicator = "..",
 --     })
 -- end
-
-return M
