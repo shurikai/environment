@@ -1,9 +1,9 @@
 return {
     "neogitorg/neogit",
     event = "VeryLazy",
-    config = function()
-        vim.keymap.set("n", "<Leader>ng", ":Neogit<CR>", { desc = "[N]eo[g]it" })
-        require("neogit").setup({
+    -- config = function()
+    opts = {
+        -- require("neogit").setup({
             auto_refresh = true,
             disable_builtin_notifications = false,
             use_magit_keybindings = false,
@@ -26,6 +26,7 @@ return {
                 -- { CLOSED, OPENED }
                 hunk = { "", "" },
             },
-        })
-    end,
+    }
+        -- })
+    -- end,
 }

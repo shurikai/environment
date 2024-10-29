@@ -1,4 +1,4 @@
-local M = {
+return {
     "christoomey/vim-tmux-navigator",
     cmd = {
         "TmuxNavigateLeft",
@@ -14,10 +14,7 @@ local M = {
         { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
         { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
+    config = function()
+        require("project_nvim").setup()
+    end,
 }
-
-function M.config()
-    require("project_nvim").setup()
-end
-
-return M

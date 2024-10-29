@@ -41,32 +41,72 @@ keymap("v", "p", '"_dP', opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- [[ NvimTree ]] --
-keymap("n", "<leader>e", "<CMD>Neotree toggle<CR>", opts)
+-- [[ NeoTree ]] --
+local ok, _ = pcall(require, "neo-tree")
+if not ok then
+    print("Unable to set Neotree keymaps.")
+else
+    vim.keymap.set("n", "<Leader>e", ":Neotree toggle<CR>", { noremap = true, silent = true })
+    vim.keymap.set("n", "<Leader>g", ":Neotree float git_status<CR>", { noremap = true, silent = true })
+    vim.keymap.set("n", "<Leader>b", ":Neotree float buffers<CR>", { noremap = true, silent = true })
+    vim.keymap.set("n", "|", ":Neotree toggle current reveal_force_cwd<CR>", { noremap = true, silent = true })
+end
 
 -- [[ LSP Navigation - Diagnostics ]] --
-vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { desc = "Go to next diagnostic line." })
-vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { desc = "Go to next diagnostic line." })
+ok, _ = pcall(require, "lspconfig")
+if not ok then
+    print("Unable to set lspconfig keymaps.")
 
--- [[ JDTLS/LSP Bindings ]] --
-vim.keymap.set("n", "<leader>co", "<Cmd>lua require'jdtls'.organize_imports()<CR>", { desc = "Organize Imports" })
-vim.keymap.set("n", "<leader>crv", "<Cmd>lua require('jdtls').extract_variable()<CR>", { desc = "Extract Variable" })
-vim.keymap.set("n", "<leader>crc", "<Cmd>lua require('jdtls').extract_constant()<CR>", { desc = "Extract Constant" })
-vim.keymap.set(
-    "v",
-    "<leader>crv",
-    "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>",
-    { desc = "Extract Variable" }
-)
-vim.keymap.set(
-    "v",
-    "<leader>crc",
-    "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>",
-    { desc = "Extract Constant" }
-)
-vim.keymap.set(
-    "v",
-    "<leader>crm",
-    "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>",
-    { desc = "Extract Method" }
-)
+else
+    vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { desc = "Go to next diagnostic line." })
+    vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic line." })
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
+    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "LSP [G]o to [D]efinition" })
+    vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, { desc = "LSP [G]o to [D]eclaration" })
+    vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "LSP [G]o to [R]eferences" })
+    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP [C]ode [A]ctions" })
+    -- vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "LSP [F]ormat Buffer" })
+end
+
+vim.keymap.set("n", "<Leader>ng", ":Neogit<CR>", { desc = "[N]eo[g]it" })
+
+-- [[ Telescope ]] --
+ok, _ = pcall(require, "telescope")
+if not ok then
+    print("Unable to set Telescope keymaps.")
+else
+    local builtin = require("telescope.builtin")
+    vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
+    vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
+    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
+    vim.keymap.set("n", "<leader>fs", builtin.builtin, { desc = "[F]ind [S]elect Telescope" })
+    vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[F]ind Current [W]ord" })
+    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
+    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
+    vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[F]ind [R]esume" })
+    vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "[F]ind Recent Files" })
+    vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>", { desc = "[F]ind Recent [P]rojects" })
+    vim.keymap.set("n", "<leader>fb", builtin.git_branches, { desc = "[F]ind Git [B]ranches" })
+    vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+    vim.keymap.set("n", "<leader>lr", builtin.lsp_references, { desc = "[L]SP [R]eferences" })
+
+    vim.keymap.set("n", "<leader>/", function()
+        builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+            winblend = 10,
+            previewer = false,
+        }))
+    end, { desc = "[/] Fuzzily search current buffer" })
+
+    vim.keymap.set("n", "<leader>f/", function()
+        builtin.live_grep(require("telescope.themes").get_ivy({
+            grep_open_files = true,
+            prompt_title = "Live Grep in Open Files",
+        }))
+    end, { desc = "[F]ind [/] in Open Files" })
+
+    vim.keymap.set("n", "<leader>fn", function()
+        builtin.find_files({ cwd = vim.fn.stdpath("config") })
+    end, { desc = "[F]ind [N]eovim files" })
+end
+
+-- [[  ]] --

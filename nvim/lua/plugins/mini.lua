@@ -14,7 +14,7 @@ return {
         -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
         -- - sd'   - [S]urround [D]elete [']quotes
         -- - sr)'  - [S]urround [R]eplace [)] [']
-        require("mini.surround").setup()
+        -- require("mini.surround").setup()
 
         -- Simple and easy statusline.
         --  You could remove this setup call if you don't like it,
@@ -31,12 +31,16 @@ return {
         --     return "%2l:%-2v"
         -- end
 
-        --require("mini.animate").setup()
+        require("mini.animate").setup({
+            scroll = {
+                enable = false,
+            },
+        })
         -- require("mini.notify").setup()
         require("mini.starter").setup()
         require("mini.icons").setup()
         -- require("mini.diff").setup()
-        require("mini.git").setup()
+        -- require("mini.git").setup()
         MiniIcons.mock_nvim_web_devicons()
         -- ... and there is more!
         --  Check out: https://github.com/echasnovski/mini.nvim
