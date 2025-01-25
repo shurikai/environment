@@ -35,3 +35,4 @@ spec("jason.neogit")
 spec("jason.gitsigns")
 
 require("jason.lazy")
+
