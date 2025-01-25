@@ -6,12 +6,10 @@ return {
     opts = {
         options = {
             icons_enabled = true,
-            -- theme = "auto",
             theme = "catppuccin",
-            -- theme = "gruvbox",
-            -- component_separators = { left = "", right = "" },
+            -- theme = "everforest",
+            -- theme = "lackluster",
             component_separators = { left = "/", right = "/" },
-            -- section_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
             disabled_filetypes = {
                 statusline = {},
@@ -30,24 +28,40 @@ return {
             lualine_a = {
                 {
                     "mode",
+                    icons_enabled = false,
                     fmt = function(str)
-                        return "   " .. str:sub(1, 1)
+                        -- return "   " .. str:sub(1, 1)
+                        return str:sub(1, 1)
+                    end,
+                    icon = "",
+                },
+            },
+            lualine_c = {
+                -- {
+                --     "diff",
+                --     symbols = {
+                --         added = " ",
+                --         modified = "󰾞 ",
+                --         removed = " ",
+                --     },
+                -- },
+                "diagnostics",
+                {
+                    function()
+                        local count = 0
+                        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+                            if vim.api.nvim_buf_get_option(buf, "modified") then
+                                count = count + 1
+                            end
+                        end
+                        if count > 0 then
+                            return "󰏫 " .. count
+                        end
+                        return ""
                     end,
                 },
             },
             lualine_b = {
-                "branch",
-                {
-                    "diff",
-                    symbols = {
-                        added = " ",
-                        modified = "󰾞 ",
-                        removed = " ",
-                    },
-                },
-                "diagnostics",
-            },
-            lualine_c = {
                 {
                     "filetype",
                     icon_only = true,
@@ -55,7 +69,7 @@ return {
                 {
                     "filename",
                     newfile_status = true,
-                    path = 1,
+                    path = 0,
                     symbols = {
                         modified = " ",
                         readonly = " ",
@@ -65,8 +79,8 @@ return {
             },
             -- lualine_x = { "encoding", "fileformat", "filetype" },
             lualine_x = { "searchcount", "selectioncount" },
-            lualine_y = { "progress" },
-            lualine_z = { "location" },
+            lualine_y = { "progress", "location" },
+            lualine_z = { "branch" },
         },
         inactive_sections = {
             lualine_a = {},
@@ -77,27 +91,35 @@ return {
             lualine_z = {},
         },
         tabline = {},
-        -- winbar = { require("lspsaga.symbol.winbar").get_bar() },
         winbar = {
             lualine_a = {},
-            lualine_b = { "branch" },
+            lualine_b = {},
             lualine_c = {
-                {
-                    draw_empty = true,
-                    function()
-                        local navic = require("nvim-navic")
-                        local has_navic = navic.is_available()
-                        if has_navic then
-                            return navic.get_location()
-                        else
-                            return vim.fn.expand("%:p:~:.:h")
+                function()
+                    local navic = require "nvim-navic"
+                    local has_navic = navic.is_available()
+                    if has_navic then
+                        return navic.get_location()
+                    else
+                        return vim.fn.expand "%:p:~:.:h"
+                    end
+                end,
+            },
+            lualine_z = {
+                function()
+                    local buffers = vim.lsp.get_active_clients()
+                    local client_names = {}
+
+                    for _, client in ipairs(buffers) do
+                        if client.name ~= "null-ls" then
+                            table.insert(client_names, client.name)
                         end
-                    end,
-                },
+                    end
+                    return vim.fn.join(client_names, ",")
+                end,
             },
             -- lualine_x = {},
             -- lualine_y = {},
-            -- lualine_z = {},
         },
         inactive_winbar = {},
         extensions = { "quickfix" },

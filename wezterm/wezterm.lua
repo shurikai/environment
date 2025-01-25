@@ -8,16 +8,13 @@ config = {
 	window_close_confirmation = "NeverPrompt",
 	window_decorations = "RESIZE",
 	default_cursor_style = "BlinkingBar",
-	--color_scheme = 'tokyonight',
-	-- color_scheme = "Grayscale (dark) (terminal.sexy)",
-	-- color_scheme = "kanagawabones",
-	-- color_scheme = "Sequoia Monochrome",
-	color_scheme = "Mono Theme (terminal.sexy)",
-	-- color_scheme = "nord",
+	color_scheme = "Catppuccin Mocha",
+	-- color_scheme = "Everforest Dark (Gogh)",
 	-- font = wezterm.font("M+CodeLat50 Nerd Font", { weight = "Regular" }),
-	font = wezterm.font("IosevkaTermSlab Nerd Font", { weight = "Regular" }),
+	-- font = wezterm.font("IosevkaTermSlab Nerd Font", { weight = "Regular" }),
+	font = wezterm.font("ShureTechMono Nerd Font", { weight = "Regular" }),
 	-- font = wezterm.font("IosevkaTerm Nerd Font", { weight = "Light" }),
-	font_size = 18,
+	font_size = 14,
 
 	background = {
 		-- {
