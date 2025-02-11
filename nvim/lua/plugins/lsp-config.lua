@@ -6,7 +6,12 @@ return {
         lazy = false,
         opts = {
             ensure_installed = {
+                -- "biome",
                 "gopls",
+                "eslint_d",
+                "js-debug-adapter",
+                "prettier",
+                "typescript-language-server",
             },
         },
     },
@@ -16,11 +21,13 @@ return {
         opts = {
             ensure_installed = {
                 "basedpyright",
+                "biome",
                 "clangd",
                 "lua_ls",
                 "jsonls",
                 "gopls",
                 "yamlls",
+                "ts_ls",
             },
             auto_install = true,
         },
@@ -38,6 +45,7 @@ return {
                 "golangci-lint",
                 "golines",
                 "isort",
+                "prettier",
                 "stylua",
             },
         },
@@ -81,6 +89,10 @@ return {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
+            -- lspconfig.biome.setup {
+            --     capabilities = capabilities,
+            --     on_attach = on_attach,
+            -- }
             lspconfig.clangd.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,
@@ -96,14 +108,11 @@ return {
             lspconfig.ts_ls.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,
-            }
-            lspconfig.solargraph.setup {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            }
-            lspconfig.html.setup {
-                capabilities = capabilities,
-                on_attach = on_attach,
+                init_options = {
+                    preferences = {
+                        disableSuggestions = true,
+                    },
+                },
             }
             lspconfig.lua_ls.setup {
                 capabilities = capabilities,
