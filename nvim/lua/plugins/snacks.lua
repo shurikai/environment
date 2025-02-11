@@ -25,7 +25,15 @@ return {
     -- quickfile = { enabled = true },
     statuscolumn = { enabled = true },
     -- words = { enabled = true },
-    picker = {},
+    picker = {
+      sources = {
+        explorer = {
+          layout = {
+            layout = { position = 'left' },
+          },
+        },
+      },
+    },
     explorer = {
       replace_netrw = true,
     },
@@ -37,7 +45,7 @@ return {
       function()
         Snacks.picker.smart()
       end,
-      desc = '[S]mart Find Files',
+      desc = 'Snacks Smart Find Files',
     },
     {
       '<leader>,',
