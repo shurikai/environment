@@ -1,3 +1,5 @@
+-- vim.g.ascii_art = require 'library.ascii_art'
+
 -- Bootstrap lazy.nvim
 --    This will download and install the plugin manager if it isn't already
 --    present, then configure it to use lua/plugins for plugin specs. It also

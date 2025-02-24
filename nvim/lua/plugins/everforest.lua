@@ -7,6 +7,6 @@ return {
     require('everforest').setup {
       background = 'hard',
     }
-    vim.cmd.colorscheme 'everforest'
+    -- vim.cmd.colorscheme 'everforest'
   end,
 }

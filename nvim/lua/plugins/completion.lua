@@ -76,7 +76,7 @@ return {
           },
         },
         ghost_text = {
-          enabled = true,
+          enabled = false, -- The ghost text was getting kind of annoying
         },
         menu = {
           draw = {

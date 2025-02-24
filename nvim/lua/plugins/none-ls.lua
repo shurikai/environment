@@ -9,7 +9,7 @@ return {
       sources = {
         require 'none-ls.code_actions.eslint_d',
         null_ls.builtins.diagnostics.cppcheck,
-        -- require "none-ls.diagnostics.eslint_d",
+        require 'none-ls.diagnostics.eslint_d',
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.clang_format,
         null_ls.builtins.formatting.gofmt,
