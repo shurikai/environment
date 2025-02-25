@@ -11,6 +11,7 @@ return {
             javascript = { "prettierd", "prettier", stop_after_first = true },
             json = { "prettier", "fixjson", stop_after_first = true },
             go = { "gofumpt", "goimports-revieser", "golines" },
+            typescript = { "prettier", "prettierd", stop_after_first = true },
         },
     },
 }

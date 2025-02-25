@@ -1,38 +1,66 @@
-# ~/.config/starship.toml
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# insert_blank_line = false
+# [┌───────────────────](bold dragonblue)$fill[>](bold dragonblue)
+# [│](bold dragonblue)$directory$git_branch$package
+# [└─>](bold dragonblue)
+
 format = """
 $directory\
-$golang
-$os\
-$character"""
-# format = '''
-# [┌───────────────────>](bold green)
-# [│ ](bold green)$directory$rust$package
-# [└─>](bold green) '''
-
-right_format = """
-$git_branch\
-$git_state\
-$git_status
+$git_branch$git_status\
+$fill$nodejs$lua\
+$line_break\
+$os$character
 """
+palette = "kanagawa"
 
-add_newline = false
-palette = "everforest"
 
 [fill]
-symbol = '-'
-style = "purple"
+symbol = " "
+style = "dragonblue"
 
-[golang]
-format = '\[[$symbol($version)]($style)\]'
-style = 'fg:purple'
+[directory]
+style = "bold fg:lotusblue4 bg:sumiink4"
+format = "[$path]($style)"
+truncate_to_repo = false
+truncation_length = 20
+before_repo_root_style = "bold fg:lotusblue1 bg:sumiink4"
+repo_root_style = "bold fg:lotusblue3 bg:sumiink4"
+repo_root_format = '[](fg:sumiink4)[ $before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path ]($style)[](fg:sumiink4)'
+
+[character]
+disabled = false
+success_symbol = '[>](bold fg:oniviolet)'
+error_symbol = '[>](bold fg:autumred)'
+# vimcmd_symbol = "[󰄛 ❮](subtext-1)" # For use with zsh-vi-mode
+
+[git_branch]
+symbol = "󰘬 "
+style = "fg:dragongreen bg:dragonblack5"
+format = '[](fg:dragonblack5)[ <$branch>]($style)'
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](bold fg:sakurapink bg:dragonblack5) ($ahead_behind$stashed)]($style)[](fg:dragonblack5)"
+style = "bg:dragonblack5 fujiwhite"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[nodejs]
+format = '[$symbol($version)(/$engines_version)]($style)'
+style = 'bold surimiorange'
 
 [lua]
-format = '\[[$symbol($version)]($style)\]'
+symbol = '󰢱'
 
 [os]
 disabled = false
-format = '[$symbol ]($style)'
-style = 'fg:grey2'
+style = "fg:oniviolet"
+format = "[$symbol ]($style)"
 
 [os.symbols]
 Windows = "󰍲"
@@ -66,22 +94,22 @@ ssh_only = false
 style = 'fg:green'
 format = '[@mac]($style) '
 
-[directory]
-style = "fg:yellow"
-read_only_style = "fg:orange"
-# truncation_length = 40
-# truncation_symbol = "…/"
-format = "[  $path]($style)[$read_only]($read_only_style) "
+# [directory]
+# style = "fg:yellow"
+# read_only_style = "fg:orange"
+# # truncation_length = 40
+# # truncation_symbol = "…/"
+# format = "[  $path]($style)[$read_only]($read_only_style) "
 
-[git_branch]
-style = "fg:green"
-symbol = " "
-# truncation_length = 10
-format = "[$symbol$branch(:$remote_branch)]($style) "
+# [git_branch]
+# style = "fg:green"
+# symbol = " "
+# # truncation_length = 10
+# format = "[$symbol$branch(:$remote_branch)]($style) "
 
-[character]
-success_symbol = '[](bold green)'
-error_symbol = '[](bold red)'
+# [character]
+# success_symbol = '[](bold green)'
+# error_symbol = '[](bold red)'
 
 [palettes.everforest]
 bg_dim = "#232a2e"
@@ -323,3 +351,109 @@ statusline3 = "#e67e80"
 #
 # [solidity]
 # format = '\[[$symbol($version)]($style)\]'
+
+[palettes.kanagawa]
+sumiink0 = "#16161D"
+sumiink1 = "#181820"
+sumiink2 = "#1a1a22"
+sumiink3 = "#1F1F28"
+sumiink4 = "#2A2A37"
+sumiink5 = "#363646"
+sumiink6 = "#54546D"
+waveblue1 = "#223249"
+waveblue2 = "#2D4F67"
+wintergreen = "#2B3328"
+winteryellow = "#49443C"
+winterred = "#43242B"
+winterblue = "#252535"
+autumngreen = "#76946A"
+autumnred = "#C34043"
+autumnyellow = "#DCA561"
+samuraired = "#E82424"
+roninyellow = "#FF9E3B"
+waveaqua1 = "#6A9589"
+dragonblue = "#658594"
+oldwhite = "#C8C093"
+fujiwhite = "#DCD7BA"
+fujigray = "#727169"
+oniviolet = "#957FB8"
+oniviolet2 = "#b8b4d0"
+springviolet1 = "#938AA9"
+springviolet2 = "#9CABCA"
+crystalblue = "#7E9CD8"
+springblue = "#7FB4CA"
+lightblue = "#A3D4D5"
+waveaqua2 = "#7AA89F"
+springgreen = "#98BB6C"
+boatyellow1 = "#938056"
+boatyellow2 = "#C0A36E"
+carpyellow = "#E6C384"
+sakurapink = "#D27E99"
+wavered = "#E46876"
+peachred = "#FF5D62"
+surimiorange = "#FFA066"
+katanagray = "#717C7C"
+dragonblack0 = "#0d0c0c"
+dragonblack1 = "#12120f"
+dragonblack2 = "#1D1C19"
+dragonblack3 = "#181616"
+dragonblack4 = "#282727"
+dragonblack5 = "#393836"
+dragonblack6 = "#625e5a"
+dragonwhite = "#c5c9c5"
+dragongreen = "#87a987"
+dragongreen2 = "#8a9a7b"
+dragonpink = "#a292a3"
+dragonorange = "#b6927b"
+dragonorange2 = "#b98d7b"
+dragonGray = "#a6a69c"
+dragongray2 = "#9e9b93"
+dragongray3 = "#7a8382"
+dragonblue2 = "#8ba4b0"
+dragonviolet= "#8992a7"
+dragonred = "#c4746e"
+dragonaqua = "#8ea4a2"
+dragonash = "#737c73"
+dragonteal = "#949fb5"
+dragonyellow = "#c4b28a"
+lotusink1 = "#545464"
+lotusink2 = "#43436c"
+lotusgray = "#dcd7ba"
+lotusgray2 = "#716e61"
+lotusgray3 = "#8a8980"
+lotuswhite0 = "#d5cea3"
+lotuswhite1 = "#dcd5ac"
+lotuswhite2 = "#e5ddb0"
+lotuswhite3 = "#f2ecbc"
+lotuswhite4 = "#e7dba0"
+lotuswhite5 = "#e4d794"
+lotusviolet1 = "#a09cac"
+lotusviolet2 = "#766b90"
+lotusviolet3 = "#c9cbd1"
+lotusviolet4 = "#624c83"
+lotusblue1 = "#c7d7e0"
+lotusblue2 = "#b5cbd2"
+lotusblue3 = "#9fb5c9"
+lotusblue4 = "#4d699b"
+lotusblue5 = "#5d57a3"
+lotusgreen = "#6f894e"
+lotusgreen2 = "#6e915f"
+lotusgreen3 = "#b7d0ae"
+lotuspink = "#b35b79"
+lotusorange = "#cc6d00"
+lotusorange2 = "#e98a00"
+lotusyellow ="#77713f"
+lotusyellow2 = "#836f4a"
+lotusyellow3 = "#de9800"
+lotusyellow4 = "#f9d791"
+lotusred = "#c84053"
+lotusred2 = "#d7474b"
+lotusred3 = "#e82424"
+lotusred4 = "#d9a594"
+lotusaqua = "#597b75"
+lotusaqua2 = "#5e857a"
+lotusteal1 = "#4e8ca2"
+lotusteal2 = "#6693bf"
+lotusteal3 = "#5a7785"
+lotuscyan = "#d7e3d8"
+
