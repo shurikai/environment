@@ -1,0 +1,555 @@
+Ψ Compiling keymap with gmake -r -R -f builddefs/build_keyboard.mk -s KEYBOARD=pauperboards/pixie KEYMAP=pauperboards KEYBOARD_FILESAFE=pauperboards_pixie TARGET=pauperboards_pixie_pauperboards VERBOSE=false COLOR=true SILENT=false QMK_BIN="qmk" QMK_USERSPACE=/Users/jason/development/qmk_userspace MAIN_KEYMAP_PATH_1=/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards MAIN_KEYMAP_PATH_2=/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards MAIN_KEYMAP_PATH_3=/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards MAIN_KEYMAP_PATH_4=/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards MAIN_KEYMAP_PATH_5=/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards
+
+
+arm-none-eabi-gcc (Homebrew ARM GCC 8.5.0_2) 8.5.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Compiling: quantum/keymap_introspection.c                                                          In file included from /Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:18,
+                 from quantum/keymap_introspection.c:5:
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:7: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+       ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:14: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+              ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:21: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+                     ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:28: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+                            ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:37: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+                                     ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:46: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+                                              ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:52: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+                                                    ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:58: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+                                                          ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:64: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+                                                                ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:73: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+                                                                         ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:81:7: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F11, KC_F4, KC_F5, KC_F6, _______, KC_PEQL, KC_4, KC_5, KC_6, KC_MINS, \
+       ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:81:14: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F11, KC_F4, KC_F5, KC_F6, _______, KC_PEQL, KC_4, KC_5, KC_6, KC_MINS, \
+              ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:81:21: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F11, KC_F4, KC_F5, KC_F6, _______, KC_PEQL, KC_4, KC_5, KC_6, KC_MINS, \
+                     ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:81:28: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F11, KC_F4, KC_F5, KC_F6, _______, KC_PEQL, KC_4, KC_5, KC_6, KC_MINS, \
+                            ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:81:37: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F11, KC_F4, KC_F5, KC_F6, _______, KC_PEQL, KC_4, KC_5, KC_6, KC_MINS, \
+                                     ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:81:46: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F11, KC_F4, KC_F5, KC_F6, _______, KC_PEQL, KC_4, KC_5, KC_6, KC_MINS, \
+                                              ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:81:52: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F11, KC_F4, KC_F5, KC_F6, _______, KC_PEQL, KC_4, KC_5, KC_6, KC_MINS, \
+                                                    ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:81:58: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F11, KC_F4, KC_F5, KC_F6, _______, KC_PEQL, KC_4, KC_5, KC_6, KC_MINS, \
+                                                          ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:81:64: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F11, KC_F4, KC_F5, KC_F6, _______, KC_PEQL, KC_4, KC_5, KC_6, KC_MINS, \
+                                                                ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:81:73: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F11, KC_F4, KC_F5, KC_F6, _______, KC_PEQL, KC_4, KC_5, KC_6, KC_MINS, \
+                                                                         ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:82:7: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F12, KC_F1, KC_F2, KC_F3, _______, KC_PAST, KC_1, KC_2, KC_3, KC_SLSH, \
+       ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:82:14: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F12, KC_F1, KC_F2, KC_F3, _______, KC_PAST, KC_1, KC_2, KC_3, KC_SLSH, \
+              ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:82:21: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F12, KC_F1, KC_F2, KC_F3, _______, KC_PAST, KC_1, KC_2, KC_3, KC_SLSH, \
+                     ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:82:28: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F12, KC_F1, KC_F2, KC_F3, _______, KC_PAST, KC_1, KC_2, KC_3, KC_SLSH, \
+                            ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:82:37: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F12, KC_F1, KC_F2, KC_F3, _______, KC_PAST, KC_1, KC_2, KC_3, KC_SLSH, \
+                                     ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:82:46: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F12, KC_F1, KC_F2, KC_F3, _______, KC_PAST, KC_1, KC_2, KC_3, KC_SLSH, \
+                                              ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:82:52: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F12, KC_F1, KC_F2, KC_F3, _______, KC_PAST, KC_1, KC_2, KC_3, KC_SLSH, \
+                                                    ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:82:58: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F12, KC_F1, KC_F2, KC_F3, _______, KC_PAST, KC_1, KC_2, KC_3, KC_SLSH, \
+                                                          ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:82:64: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F12, KC_F1, KC_F2, KC_F3, _______, KC_PAST, KC_1, KC_2, KC_3, KC_SLSH, \
+                                                                ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:82:73: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+ KC_F12, KC_F1, KC_F2, KC_F3, _______, KC_PAST, KC_1, KC_2, KC_3, KC_SLSH, \
+                                                                         ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:83:28: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+                     _______, _______, KC_0, LT(_NAV, KC_PDOT)
+                            ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:83:37: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+                     _______, _______, KC_0, LT(_NAV, KC_PDOT)
+                                     ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:83:43: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+                     _______, _______, KC_0, LT(_NAV, KC_PDOT)
+                                           ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:20: note: in expansion of macro '_NUMBER'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                    ^~~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+quantum/quantum_keycodes.h:121:23: error: initializer element is not constant
+ #define LT(layer, kc) (QK_LAYER_TAP | (((layer)&0xF) << 8) | ((kc)&0xFF))
+                       ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+quantum/quantum_keycodes.h:121:23: note: (near initialization for 'keymaps[0][3][4]')
+ #define LT(layer, kc) (QK_LAYER_TAP | (((layer)&0xF) << 8) | ((kc)&0xFF))
+                       ^
+./.build/obj_pauperboards_pixie_pauperboards/src/default_keyboard.h:42:30: note: in definition of macro 'LAYOUT_3x10_4'
+   {KC_NO, KC_NO, k3C, KC_NO, k3E, k3F, KC_NO, k3H, KC_NO, KC_NO} \
+                              ^~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:36:17: note: in expansion of macro 'LT'
+ #define LT_NUM  LT(_NUMBER, KC_BSPC)
+                 ^~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:55:42: note: in expansion of macro 'LT_NUM'
+                                 LT_NAV,  LT_NUM, KC_SPC, KC_ENT
+                                          ^~~~~~
+In file included from /Users/jason/development/qmk_userspace/users/pauperboards/wrappers.h:20,
+                 from /Users/jason/development/qmk_userspace/users/pauperboards/config.h:42,
+                 from <command-line>:
+/Users/jason/development/qmk_userspace/users/pauperboards/layers.h:80:7: error: expected ']' before ',' token
+ KC_F10, KC_F7, KC_F8, KC_F9, _______, KC_PPLS, KC_7, KC_8, KC_9, KC_UNDS, \
+       ^
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:69:6: note: in expansion of macro '_NUMBER'
+     [_NUMBER] = LAYOUT(
+      ^~~~~~~
+In file included from quantum/keymap_introspection.c:5:
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:69:17: error: implicit declaration of function 'LAYOUT'; did you mean 'LOPT'? [-Werror=implicit-function-declaration]
+     [_NUMBER] = LAYOUT(
+                 ^~~~~~
+                 LOPT
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:69:17: error: initializer element is not constant
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:69:17: note: (near initialization for 'keymaps[1][0][0]')
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:87:14: error: initializer element is not constant
+     [_NAV] = LAYOUT(
+              ^~~~~~
+/Users/jason/development/qmk_userspace/keyboards/pauperboards/pixie/keymaps/pauperboards/keymap.c:87:14: note: (near initialization for 'keymaps[3][0][0]')
+cc1: all warnings being treated as errors
+ [31;01m[ERRORS][0m
+ | 
+ | 
+ | 
+gmake: *** [builddefs/common_rules.mk:362: .build/obj_pauperboards_pixie_pauperboards/quantum/keymap_introspection.o] Error 1
