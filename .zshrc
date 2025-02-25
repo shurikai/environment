@@ -1,22 +1,10 @@
 export PATH=$PATH:$HOME/aws/:"/Applications/IntelliJ IDEA.app/Contents/MacOS/"
 
-alias awsLogin=~/aws/awsLogin.account
-alias ecrLogin='aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 290503755741.dkr.ecr.us-east-1.amazonaws.com'
+autoload -U compinit 
+compinit
 
-alias ls='eza --icons=always --git'
+alias ls="eza --icons=always --git"
 alias cat='bat'
-
-crewProd () {        
-        awssaml get-credentials --account-id 637843665543 --name "crew-prod1" --role swa/SWACSOperations --user-name x318323 --duration 14400;
-        awssaml populate-aws-credentials;
-        awssaml export-active;
-        export AWS_DEFAULT_PROFILE=637843665543-SWACSOperations;
-        export AWS_PROFILE=637843665543-SWACSOperations;
-        export AWS_DEFAULT_REGION=us-east-1;
-        export AWS_REGION=us-east-1;
-        ecrLogin;
-        aws --profile default eks get-token --cluster-name crew-prod1;
-}
 
 # ---- FZF -----
 
@@ -50,11 +38,6 @@ blue="#06BCE4"
 cyan="#2CF9ED"
 
 export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
-
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-    eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/pure.omp.json)"
-    #eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/tokyo.omp.json)"
-fi
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
