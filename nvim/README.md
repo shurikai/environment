@@ -21,39 +21,23 @@
 4. Automatically load custom code in after/plugin and after/ftplugin
 
 ## Plugins
-### Basic
-1. Mason
-2. mason-lspconfig
-3. mason-tool-installer
-4. nvim-lspconfig
-5. lualine
-6. snacks picker/explorer
-7. none-ls
-8. navic
-9. treesitter
-### Git / Diff
-1. Gitsigns
-2. Diffview
-3. Neogit (?)
-### Editing
-1. Blink
-2. Conform (?)
-3. Debugging
-    1. nvim-dap
-    2. nvim-dap-ui
-    3. nvim-dap-virtual-text
-4. snacks indent
-### QoL
-1. nvim colorizer
-2. LazyDev
-3. Colorscheme (probably only one of...)
-    1. catppuccin
-    2. kanagawa
-    3. everforest
-    4. zenbones
-    5. warlock
-4. mini
-5. snacks statuscolumn
-6. snacsk notifier
-7. rainbow-delimeters
-8. trouble
+[X] zenbones
+[X] lualine
+[X] mini
+[X] snacks
+[X] treesitter
+[X] gitsigns
+[ ] diffview
+[X] nvim-lspconfig
+[X] Mason
+[X] mason-lspconfig
+[X] mason-tool-installer
+[X] none-ls
+[X] navic
+[X] trouble
+[ ] nvim colorizer
+[ ] rainbow-delimeters
+[ ] lazydev
+[X] blink
+[ ] conform?
+[ ] dap, dap-ui, dap-virtual-text
